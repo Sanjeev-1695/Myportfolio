@@ -112,11 +112,11 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text text-transparent;
   }
 
   .glass-effect {
-    @apply bg-background/80 backdrop-blur-lg border border-border/50;
+    @apply bg-background/60 backdrop-blur-xl border border-border/30 shadow-xl;
   }
 
   .gradient-blur {
@@ -130,10 +130,46 @@
   }
 
   .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl;
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20;
   }
 
   .animate-pulse-slow {
     animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+
+  .glow-primary-hover:hover {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.5);
+  }
+
+  .gradient-border {
+    background:
+      linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary) / 0.5))
+        padding-box,
+      linear-gradient(90deg, hsl(var(--primary)), transparent) border-box;
+    border: 2px solid transparent;
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      110deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 60%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
   }
 }
