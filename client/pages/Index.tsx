@@ -118,13 +118,13 @@ export default function Index() {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="fixed top-0 w-full bg-background/80 backdrop-blur-lg border-b border-border z-40"
+        className="fixed top-0 w-full bg-background/60 backdrop-blur-xl border-b border-border/50 z-40 shadow-lg shadow-primary/5"
       >
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent"
+            className="text-2xl font-bold bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text text-transparent"
           >
             Portfolio
           </motion.div>
@@ -198,16 +198,54 @@ export default function Index() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="mb-8"
           >
-            <div className="w-32 h-32 mx-auto mb-8 relative">
+            <div className="w-40 h-40 mx-auto mb-8 relative">
+              {/* Outer rotating rings */}
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 rounded-full bg-gradient-to-r from-primary to-primary/60 p-1"
+                className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-purple-500 to-pink-500 p-1 shadow-2xl shadow-primary/25"
               >
                 <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-r from-primary to-primary/60" />
+                  <motion.div
+                    className="w-24 h-24 rounded-full bg-gradient-to-br from-primary via-purple-600 to-pink-600 relative overflow-hidden"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    {/* Inner animated gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent animate-gradient-x" />
+                    {/* Pulse effect */}
+                    <div className="absolute inset-2 rounded-full border border-white/30 animate-pulse" />
+                  </motion.div>
                 </div>
               </motion.div>
+
+              {/* Secondary ring */}
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-4 rounded-full border-2 border-primary/20 border-dashed"
+              />
+
+              {/* Floating dots around avatar */}
+              {[...Array(8)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-3 h-3 bg-gradient-to-r from-primary to-purple-500 rounded-full"
+                  style={{
+                    top: `${50 + 40 * Math.cos((i * Math.PI) / 4)}%`,
+                    left: `${50 + 40 * Math.sin((i * Math.PI) / 4)}%`,
+                  }}
+                  animate={{
+                    scale: [1, 1.5, 1],
+                    opacity: [0.3, 0.8, 0.3],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    delay: i * 0.25,
+                  }}
+                />
+              ))}
             </div>
           </motion.div>
 
