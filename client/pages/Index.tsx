@@ -80,24 +80,6 @@ export default function Index() {
       link: "#",
       featured: true,
     },
-    {
-      title: "MyBuddy.ai - PTSD Support Chatbot",
-      description:
-        "Designed a sentiment-aware chatbot using LLaMA 3.2 LLM to assist PTSD patients. Enabled empathetic responses, enhancing comfort and trust for users seeking mental support.",
-      tech: ["Python", "LLaMA 3.2", "NLP", "Streamlit"],
-      image: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-      link: "#",
-      featured: false,
-    },
-    {
-      title: "Data Analytics Projects",
-      description:
-        "Various data analysis and visualization projects using machine learning algorithms for predictive modeling and insights generation with comprehensive reporting.",
-      tech: ["Python", "Power BI", "NumPy", "Pandas"],
-      image: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
-      link: "#",
-      featured: false,
-    },
   ];
 
   const skills = [
