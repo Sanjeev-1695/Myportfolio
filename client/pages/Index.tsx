@@ -463,7 +463,17 @@ export default function Index() {
                 Get In Touch
                 <Mail className="ml-2 w-5 h-5 group-hover:rotate-12 transition-transform" />
               </Button>
-              <Button size="lg" variant="outline" className="px-8 py-3 text-lg">
+              <Button
+                size="lg"
+                variant="outline"
+                className="px-8 py-3 text-lg"
+                onClick={() =>
+                  window.open(
+                    "https://calendly.com/sanjeew1944/30min",
+                    "_blank",
+                  )
+                }
+              >
                 Schedule a Call
               </Button>
             </motion.div>
