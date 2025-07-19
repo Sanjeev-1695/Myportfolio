@@ -101,10 +101,10 @@ export default function Index() {
   ];
 
   const skills = [
-    { name: "Frontend Development", icon: Code, level: 95 },
-    { name: "UI/UX Design", icon: Palette, level: 90 },
-    { name: "Backend Development", icon: Rocket, level: 85 },
-    { name: "Mobile Development", icon: Code, level: 80 },
+    { name: "Machine Learning & AI", icon: Code, level: 90 },
+    { name: "Data Analysis & Visualization", icon: Palette, level: 85 },
+    { name: "Python Programming", icon: Rocket, level: 95 },
+    { name: "NLP & Deep Learning", icon: Code, level: 80 },
   ];
 
   const scrollToSection = (elementRef: React.RefObject<HTMLElement>) => {
