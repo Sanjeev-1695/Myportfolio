@@ -262,17 +262,34 @@ export default function Index() {
             transition={{ duration: 0.8, delay: 1 }}
             className="flex items-center justify-center space-x-6"
           >
-            {[Github, Linkedin, Mail].map((Icon, index) => (
-              <motion.a
-                key={index}
-                href="#"
-                whileHover={{ scale: 1.2, y: -5 }}
-                whileTap={{ scale: 0.9 }}
-                className="p-3 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-all duration-200"
-              >
-                <Icon className="w-6 h-6" />
-              </motion.a>
-            ))}
+            <motion.a
+              href="https://github.com/Sanjeev-1695"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2, y: -5 }}
+              whileTap={{ scale: 0.9 }}
+              className="p-3 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-all duration-200"
+            >
+              <Github className="w-6 h-6" />
+            </motion.a>
+            <motion.a
+              href="https://linkedin.com/in/sanjeev-reddy-velagala"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2, y: -5 }}
+              whileTap={{ scale: 0.9 }}
+              className="p-3 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-all duration-200"
+            >
+              <Linkedin className="w-6 h-6" />
+            </motion.a>
+            <motion.a
+              href="mailto:sanjeew1944@gmail.com"
+              whileHover={{ scale: 1.2, y: -5 }}
+              whileTap={{ scale: 0.9 }}
+              className="p-3 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-all duration-200"
+            >
+              <Mail className="w-6 h-6" />
+            </motion.a>
           </motion.div>
         </div>
       </section>
@@ -467,19 +484,34 @@ export default function Index() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="text-muted-foreground mb-4 md:mb-0">
-              © 2024 Alex Johnson. Crafted with passion and precision.
+              © 2024 Sanjeev Reddy Velagala. Crafted with passion for AI & ML.
             </div>
             <div className="flex items-center space-x-6">
-              {[Github, Linkedin, Mail].map((Icon, index) => (
-                <motion.a
-                  key={index}
-                  href="#"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <Icon className="w-5 h-5" />
-                </motion.a>
-              ))}
+              <motion.a
+                href="https://github.com/Sanjeev-1695"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1, y: -2 }}
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Github className="w-5 h-5" />
+              </motion.a>
+              <motion.a
+                href="https://linkedin.com/in/sanjeev-reddy-velagala"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1, y: -2 }}
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Linkedin className="w-5 h-5" />
+              </motion.a>
+              <motion.a
+                href="mailto:sanjeew1944@gmail.com"
+                whileHover={{ scale: 1.1, y: -2 }}
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Mail className="w-5 h-5" />
+              </motion.a>
             </div>
           </div>
         </div>
