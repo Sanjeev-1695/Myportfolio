@@ -77,7 +77,7 @@ export default function Index() {
         "Built a hybrid AI system integrating Groq API for disease prediction and rule-based decision trees for remedy recommendation. Created custom dataset of 70 diseases.",
       tech: ["Python", "Groq API", "Machine Learning", "TensorFlow"],
       image: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
-      link: "#",
+      link: "https://github.com/Sanjeev-1695/Home-remedy-recommendation-system",
       featured: true,
     },
   ];
