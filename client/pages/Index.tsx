@@ -30,10 +30,10 @@ export default function Index() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   const roles = [
-    "Full Stack Developer",
-    "UI/UX Designer",
-    "Creative Technologist",
-    "Problem Solver",
+    "AI & ML Enthusiast",
+    "Data Science Student",
+    "Machine Learning Engineer",
+    "Python Developer",
   ];
 
   const heroRef = useRef(null);
@@ -197,7 +197,7 @@ export default function Index() {
           >
             Hello, I'm
             <span className="block bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
-              Alex Johnson
+              Sanjeev Reddy
             </span>
           </motion.h1>
 
@@ -227,9 +227,9 @@ export default function Index() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-xl text-muted-foreground max-w-2xl mx-auto mb-12"
           >
-            Crafting digital experiences that blend creativity with cutting-edge
-            technology. Passionate about creating solutions that make a
-            difference.
+            4th year B.Tech student specializing in AI & ML with hands-on
+            experience in data-driven projects, NLP, and machine learning.
+            Passionate about leveraging technology to solve real-world problems.
           </motion.p>
 
           <motion.div
@@ -297,21 +297,22 @@ export default function Index() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <h3 className="text-3xl font-bold mb-6">
-                Passionate about creating amazing digital experiences
+                Passionate about AI/ML and Data Science
               </h3>
               <p className="text-lg text-muted-foreground mb-6">
-                With over 5 years of experience in full-stack development and
-                design, I specialize in creating user-centered digital solutions
-                that not only look stunning but perform exceptionally.
+                As a Computer Science undergraduate specializing in AI and ML, I
+                have hands-on experience in data-driven projects involving NLP,
+                predictive modeling, and chatbot development.
               </p>
               <p className="text-lg text-muted-foreground mb-8">
-                I believe in the power of clean code, intuitive design, and
-                meaningful user experiences. Every project is an opportunity to
-                push boundaries and create something extraordinary.
+                I'm proficient in Python, machine learning libraries, and data
+                analysis tools. With strong analytical thinking and
+                problem-solving skills, I strive to create impactful AI
+                solutions.
               </p>
               <div className="flex items-center text-muted-foreground">
                 <MapPin className="w-5 h-5 mr-2" />
-                <span>San Francisco, CA</span>
+                <span>SRM University, Chennai</span>
               </div>
             </motion.div>
 
