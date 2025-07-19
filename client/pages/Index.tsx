@@ -104,12 +104,15 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      {/* Floating cursor effect */}
+      {/* Enhanced floating cursor effect */}
       <motion.div
-        className="fixed top-0 left-0 w-6 h-6 bg-primary/20 rounded-full pointer-events-none z-50 mix-blend-difference"
-        animate={{ x: mousePosition.x - 12, y: mousePosition.y - 12 }}
+        className="fixed top-0 left-0 w-8 h-8 pointer-events-none z-50"
+        animate={{ x: mousePosition.x - 16, y: mousePosition.y - 16 }}
         transition={{ type: "spring", stiffness: 500, damping: 28 }}
-      />
+      >
+        <div className="w-full h-full bg-gradient-to-r from-primary via-purple-500 to-pink-500 rounded-full opacity-30 blur-sm" />
+        <div className="absolute inset-2 bg-gradient-to-r from-primary to-purple-600 rounded-full animate-pulse" />
+      </motion.div>
 
       {/* Navigation */}
       <motion.nav
@@ -155,9 +158,37 @@ export default function Index() {
         ref={heroRef}
         className="min-h-screen flex items-center justify-center relative overflow-hidden"
       >
-        <motion.div style={{ y }} className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-primary/30 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
+        <motion.div style={{ y }} className="absolute inset-0 overflow-hidden">
+          {/* Enhanced animated background */}
+          <div className="absolute top-10 left-10 w-96 h-96 bg-gradient-to-r from-primary/20 via-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-float" />
+          <div
+            className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-l from-blue-500/20 via-primary/20 to-purple-600/20 rounded-full blur-3xl animate-float"
+            style={{ animationDelay: "2s" }}
+          />
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-primary/10 to-pink-500/10 rounded-full blur-2xl animate-pulse" />
+
+          {/* Animated dots pattern */}
+          <div className="absolute inset-0">
+            {[...Array(50)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-1 h-1 bg-primary/20 rounded-full"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                }}
+                animate={{
+                  opacity: [0.2, 0.8, 0.2],
+                  scale: [1, 1.5, 1],
+                }}
+                transition={{
+                  duration: 3 + Math.random() * 2,
+                  repeat: Infinity,
+                  delay: Math.random() * 2,
+                }}
+              />
+            ))}
+          </div>
         </motion.div>
 
         <div className="max-w-7xl mx-auto px-6 text-center z-10">
@@ -231,16 +262,19 @@ export default function Index() {
           >
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg group"
+              className="relative bg-gradient-to-r from-primary via-purple-600 to-pink-600 hover:from-primary/90 hover:via-purple-500 hover:to-pink-500 text-primary-foreground px-8 py-3 text-lg group overflow-hidden shadow-2xl shadow-primary/25"
               onClick={() => scrollToSection(projectsRef)}
             >
-              View My Work
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="relative z-10 flex items-center">
+                View My Work
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </span>
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="px-8 py-3 text-lg group"
+              className="px-8 py-3 text-lg group relative overflow-hidden border-2 border-primary/50 hover:border-primary bg-background/80 backdrop-blur-lg hover:bg-primary/10 shadow-xl"
               onClick={() => {
                 const link = document.createElement("a");
                 link.href = "/Sanjeev_Reddy_Resume.pdf";
@@ -250,8 +284,11 @@ export default function Index() {
                 document.body.removeChild(link);
               }}
             >
-              Download Resume
-              <Download className="ml-2 w-5 h-5 group-hover:translate-y-1 transition-transform" />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="relative z-10 flex items-center">
+                Download Resume
+                <Download className="ml-2 w-5 h-5 group-hover:translate-y-1 transition-transform" />
+              </span>
             </Button>
           </motion.div>
 
