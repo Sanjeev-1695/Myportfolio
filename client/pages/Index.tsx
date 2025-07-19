@@ -63,37 +63,37 @@ export default function Index() {
 
   const projects = [
     {
-      title: "AI-Powered Analytics Dashboard",
+      title: "Resume Parsing System",
       description:
-        "A comprehensive analytics platform with real-time data visualization and machine learning insights.",
-      tech: ["React", "TypeScript", "Python", "TensorFlow"],
+        "Developed a scalable NLP-based system that processes up to 1000 resumes and ranks them based on job roles. Features bulk resume uploading (ZIP) and outputs ranked CSV for HR filtering.",
+      tech: ["Python", "NLP", "Pandas", "Scikit-learn"],
       image: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
       link: "#",
       featured: true,
     },
     {
-      title: "E-Commerce Mobile App",
+      title: "AI-based Symptom Checker with Ayurvedic Remedies",
       description:
-        "Cross-platform mobile application with seamless shopping experience and AR try-on features.",
-      tech: ["React Native", "Node.js", "MongoDB", "ARKit"],
+        "Built a hybrid AI system integrating Groq API for disease prediction and rule-based decision trees for remedy recommendation. Created custom dataset of 70 diseases.",
+      tech: ["Python", "Groq API", "Machine Learning", "TensorFlow"],
       image: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
       link: "#",
       featured: true,
     },
     {
-      title: "Blockchain Voting System",
+      title: "MyBuddy.ai - PTSD Support Chatbot",
       description:
-        "Secure and transparent voting platform built on Ethereum with end-to-end encryption.",
-      tech: ["Solidity", "Web3.js", "Next.js", "Ethereum"],
+        "Designed a sentiment-aware chatbot using LLaMA 3.2 LLM to assist PTSD patients. Enabled empathetic responses, enhancing comfort and trust for users seeking mental support.",
+      tech: ["Python", "LLaMA 3.2", "NLP", "Streamlit"],
       image: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
       link: "#",
       featured: false,
     },
     {
-      title: "Social Media Analytics Tool",
+      title: "Data Analytics Projects",
       description:
-        "Comprehensive social media management platform with advanced analytics and automation.",
-      tech: ["Vue.js", "GraphQL", "PostgreSQL", "Docker"],
+        "Various data analysis and visualization projects using machine learning algorithms for predictive modeling and insights generation with comprehensive reporting.",
+      tech: ["Python", "Power BI", "NumPy", "Pandas"],
       image: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
       link: "#",
       featured: false,
