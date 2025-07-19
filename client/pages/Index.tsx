@@ -393,6 +393,7 @@ export default function Index() {
                         size="sm"
                         variant="secondary"
                         className="opacity-0 group-hover:opacity-100 transition-opacity"
+                        onClick={() => window.open(project.link, "_blank")}
                       >
                         <ExternalLink className="w-4 h-4" />
                       </Button>
