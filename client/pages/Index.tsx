@@ -241,6 +241,14 @@ export default function Index() {
               size="lg"
               variant="outline"
               className="px-8 py-3 text-lg group"
+              onClick={() => {
+                const link = document.createElement("a");
+                link.href = "/Sanjeev_Reddy_Resume.pdf";
+                link.download = "Sanjeev_Reddy_Velagala_Resume.pdf";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
             >
               Download Resume
               <Download className="ml-2 w-5 h-5 group-hover:translate-y-1 transition-transform" />
