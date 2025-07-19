@@ -483,8 +483,7 @@ export default function Index() {
                     <div className="absolute bottom-4 right-4">
                       <Button
                         size="sm"
-                        variant="secondary"
-                        className="opacity-0 group-hover:opacity-100 transition-opacity"
+                        className="opacity-0 group-hover:opacity-100 transition-all duration-300 bg-background/80 backdrop-blur-lg hover:bg-primary hover:text-primary-foreground border border-border/50 hover:border-primary shadow-lg"
                         onClick={() => window.open(project.link, "_blank")}
                       >
                         <ExternalLink className="w-4 h-4" />
@@ -492,7 +491,7 @@ export default function Index() {
                     </div>
                   </div>
                   <CardContent className="p-6">
-                    <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
+                    <h3 className="text-2xl font-bold mb-3 group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                       {project.title}
                     </h3>
                     <p className="text-muted-foreground mb-4 leading-relaxed">
