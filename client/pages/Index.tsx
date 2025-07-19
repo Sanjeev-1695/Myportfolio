@@ -68,7 +68,7 @@ export default function Index() {
         "Developed a scalable NLP-based system that processes up to 1000 resumes and ranks them based on job roles. Features bulk resume uploading (ZIP) and outputs ranked CSV for HR filtering.",
       tech: ["Python", "NLP", "Pandas", "Scikit-learn"],
       image: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-      link: "#",
+      link: "https://github.com/Sanjeev-1695/resume-parsing-system",
       featured: true,
     },
     {
@@ -79,6 +79,15 @@ export default function Index() {
       image: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
       link: "https://github.com/Sanjeev-1695/Home-remedy-recommendation-system",
       featured: true,
+    },
+    {
+      title: "LieDetect.ai",
+      description:
+        "Advanced lie detection system that analyzes and scores conversations to determine truthfulness. Built using Gemini AI with a multi-agent architecture featuring 3 specialized agents for comprehensive analysis.",
+      tech: ["Python", "Gemini AI", "Multi-Agent System", "NLP"],
+      image: "linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)",
+      link: "https://github.com/Sanjeev-1695/Liedetect.ai",
+      featured: false,
     },
   ];
 
