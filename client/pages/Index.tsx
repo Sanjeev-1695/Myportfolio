@@ -548,7 +548,7 @@ export default function Index() {
               <Button
                 size="lg"
                 variant="outline"
-                className="px-8 py-3 text-lg"
+                className="px-8 py-3 text-lg relative overflow-hidden border-2 border-primary/50 hover:border-primary bg-background/80 backdrop-blur-lg hover:bg-primary/10 shadow-xl group"
                 onClick={() =>
                   window.open(
                     "https://calendly.com/sanjeew1944/30min",
@@ -556,7 +556,8 @@ export default function Index() {
                   )
                 }
               >
-                Schedule a Call
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <span className="relative z-10">Schedule a Call</span>
               </Button>
             </motion.div>
           </motion.div>
