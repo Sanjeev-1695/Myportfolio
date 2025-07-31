@@ -125,51 +125,179 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-cyan-400 via-pink-500 to-purple-500 bg-clip-text text-transparent;
+  }
+
+  .neon-text {
+    color: hsl(var(--neon-cyan));
+    text-shadow:
+      0 0 5px hsl(var(--neon-cyan)),
+      0 0 10px hsl(var(--neon-cyan)),
+      0 0 15px hsl(var(--neon-cyan)),
+      0 0 20px hsl(var(--neon-cyan));
   }
 
   .glass-effect {
-    @apply bg-background/60 backdrop-blur-xl border border-border/30 shadow-xl;
+    @apply bg-background/20 backdrop-blur-xl border border-cyan-500/20 shadow-2xl;
+    box-shadow:
+      0 8px 32px rgba(0, 255, 255, 0.1),
+      0 0 0 1px rgba(0, 255, 255, 0.2);
   }
 
-  .gradient-blur {
-    background: linear-gradient(135deg,
-      hsl(var(--primary)) 0%,
-      hsl(var(--primary)) 50%,
-      transparent 100%);
-    filter: blur(120px);
+  .neon-glow {
+    box-shadow:
+      0 0 20px hsl(var(--neon-cyan) / 0.5),
+      0 0 40px hsl(var(--neon-cyan) / 0.3),
+      0 0 60px hsl(var(--neon-cyan) / 0.1);
   }
 
-  .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20;
+  .neon-glow-pink {
+    box-shadow:
+      0 0 20px hsl(var(--neon-pink) / 0.5),
+      0 0 40px hsl(var(--neon-pink) / 0.3),
+      0 0 60px hsl(var(--neon-pink) / 0.1);
   }
 
-  .animate-pulse-slow {
-    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  .neon-glow-green {
+    box-shadow:
+      0 0 20px hsl(var(--neon-green) / 0.5),
+      0 0 40px hsl(var(--neon-green) / 0.3),
+      0 0 60px hsl(var(--neon-green) / 0.1);
   }
 
-  .glow-primary {
-    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  .hover-lift-3d {
+    @apply transition-all duration-300;
+    transform-style: preserve-3d;
   }
 
-  .glow-primary-hover:hover {
-    box-shadow: 0 0 30px hsl(var(--primary) / 0.5);
+  .hover-lift-3d:hover {
+    transform: translateY(-20px) rotateX(5deg) rotateY(5deg);
+    box-shadow:
+      0 25px 50px rgba(0, 255, 255, 0.2),
+      0 0 0 1px rgba(0, 255, 255, 0.1);
   }
 
-  .gradient-border {
-    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary) / 0.5)) padding-box,
-                linear-gradient(90deg, hsl(var(--primary)), transparent) border-box;
-    border: 2px solid transparent;
+  .tilt-3d {
+    transform: perspective(1000px) rotateX(10deg) rotateY(15deg);
+    transition: transform 0.6s ease-out;
   }
 
-  .shimmer {
-    background: linear-gradient(110deg, transparent 40%, rgba(255, 255, 255, 0.1) 50%, transparent 60%);
-    background-size: 200% 100%;
-    animation: shimmer 2s infinite;
+  .tilt-3d:hover {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1.05);
   }
 
-  @keyframes shimmer {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
+  .floating-3d {
+    animation: floating3d 6s ease-in-out infinite;
+  }
+
+  @keyframes floating3d {
+    0%, 100% {
+      transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+    }
+    25% {
+      transform: translateY(-20px) rotateX(5deg) rotateY(5deg);
+    }
+    50% {
+      transform: translateY(-10px) rotateX(-5deg) rotateY(10deg);
+    }
+    75% {
+      transform: translateY(-25px) rotateX(3deg) rotateY(-5deg);
+    }
+  }
+
+  .cyberpunk-border {
+    position: relative;
+    background: linear-gradient(45deg, transparent 30%, rgba(0, 255, 255, 0.1) 50%, transparent 70%);
+    background-size: 200% 200%;
+    animation: cyberpunk-border 3s linear infinite;
+  }
+
+  .cyberpunk-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    background: linear-gradient(45deg,
+      hsl(var(--neon-cyan)),
+      hsl(var(--neon-pink)),
+      hsl(var(--neon-green)),
+      hsl(var(--neon-cyan))
+    );
+    background-size: 300% 300%;
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    animation: cyberpunk-glow 2s linear infinite;
+  }
+
+  @keyframes cyberpunk-border {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes cyberpunk-glow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .scroll-parallax {
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  .matrix-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 255, 255, 0.05) 50%,
+      transparent 100%
+    );
+    animation: matrix-fall 10s linear infinite;
+  }
+
+  @keyframes matrix-fall {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+  }
+
+  .hologram {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 255, 255, 0.1) 0%,
+      rgba(255, 0, 255, 0.1) 50%,
+      rgba(0, 255, 0, 0.1) 100%
+    );
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hologram::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 70%
+    );
+    animation: hologram-scan 3s linear infinite;
+  }
+
+  @keyframes hologram-scan {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
   }
 }
