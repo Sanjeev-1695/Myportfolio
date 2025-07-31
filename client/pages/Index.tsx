@@ -206,7 +206,7 @@ export default function Index() {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-purple-500 to-pink-500 p-1 shadow-2xl shadow-primary/25"
+                className="absolute inset-0 rounded-full cyberpunk-border p-2 neon-glow"
               >
                 <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
                   <motion.div
