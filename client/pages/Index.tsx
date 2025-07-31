@@ -303,7 +303,7 @@ export default function Index() {
           >
             <Button
               size="lg"
-              className="relative bg-gradient-to-r from-cyan-500 via-pink-500 to-green-500 hover:from-cyan-400 hover:via-pink-400 hover:to-green-400 text-black px-8 py-3 text-lg group overflow-hidden neon-glow cyberpunk-border"
+              className="relative bg-gradient-to-r from-cyan-500 via-pink-500 to-green-500 hover:from-cyan-400 hover:via-pink-400 hover:to-green-400 text-white px-8 py-3 text-lg group overflow-hidden neon-glow cyberpunk-border"
               onClick={() => scrollToSection(projectsRef)}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
