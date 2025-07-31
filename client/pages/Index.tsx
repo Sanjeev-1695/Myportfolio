@@ -208,16 +208,16 @@ export default function Index() {
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 className="absolute inset-0 rounded-full cyberpunk-border p-2 neon-glow"
               >
-                <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
+                <div className="w-full h-full rounded-full bg-background/20 backdrop-blur-xl flex items-center justify-center">
                   <motion.div
-                    className="w-24 h-24 rounded-full bg-gradient-to-br from-primary via-purple-600 to-pink-600 relative overflow-hidden"
-                    whileHover={{ scale: 1.1 }}
+                    className="w-24 h-24 rounded-full bg-gradient-to-br from-cyan-400 via-pink-500 to-green-400 relative overflow-hidden hologram"
+                    whileHover={{ scale: 1.2, rotateY: 180 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    {/* Inner animated gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent animate-gradient-x" />
-                    {/* Pulse effect */}
-                    <div className="absolute inset-2 rounded-full border border-white/30 animate-pulse" />
+                    {/* Hologram scan effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-gradient-x" />
+                    {/* Neon pulse rings */}
+                    <div className="absolute inset-2 rounded-full border border-cyan-400/50 animate-pulse neon-glow" />
                   </motion.div>
                 </div>
               </motion.div>
