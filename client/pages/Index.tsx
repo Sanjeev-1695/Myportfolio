@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import ThreeBackground from "@/components/ThreeBackground";
 
 export default function Index() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -103,28 +104,30 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      {/* Enhanced floating cursor effect */}
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden relative">
+      <ThreeBackground />
+      {/* Neon cursor effect */}
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 pointer-events-none z-50"
-        animate={{ x: mousePosition.x - 16, y: mousePosition.y - 16 }}
+        className="fixed top-0 left-0 w-12 h-12 pointer-events-none z-50"
+        animate={{ x: mousePosition.x - 24, y: mousePosition.y - 24 }}
         transition={{ type: "spring", stiffness: 500, damping: 28 }}
       >
-        <div className="w-full h-full bg-gradient-to-r from-primary via-purple-500 to-pink-500 rounded-full opacity-30 blur-sm" />
-        <div className="absolute inset-2 bg-gradient-to-r from-primary to-purple-600 rounded-full animate-pulse" />
+        <div className="w-full h-full bg-cyan-400 rounded-full opacity-20 blur-lg neon-glow" />
+        <div className="absolute inset-3 bg-cyan-400 rounded-full opacity-60 animate-pulse" />
+        <div className="absolute inset-4 border border-cyan-400 rounded-full animate-ping" />
       </motion.div>
 
       {/* Navigation */}
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="fixed top-0 w-full bg-background/60 backdrop-blur-xl border-b border-border/50 z-40 shadow-lg shadow-primary/5"
+        className="fixed top-0 w-full glass-effect border-b border-cyan-500/30 z-40 neon-glow"
       >
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-2xl font-bold bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text text-transparent"
+            className="text-2xl font-bold neon-text"
           >
             Portfolio
           </motion.div>
@@ -548,7 +551,7 @@ export default function Index() {
               <Button
                 size="lg"
                 variant="outline"
-                className="px-8 py-3 text-lg relative overflow-hidden border-2 border-primary/50 hover:border-primary bg-background/80 backdrop-blur-lg hover:bg-primary/10 shadow-xl group"
+                                className="px-8 py-3 text-lg relative overflow-hidden border-2 border-primary/50 hover:border-primary bg-background/80 backdrop-blur-lg hover:bg-primary/10 shadow-xl group"
                 onClick={() =>
                   window.open(
                     "https://calendly.com/sanjeew1944/30min",
@@ -556,7 +559,7 @@ export default function Index() {
                   )
                 }
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span className="relative z-10">Schedule a Call</span>
               </Button>
             </motion.div>
