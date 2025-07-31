@@ -127,7 +127,7 @@ export default function Index() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-2xl font-bold neon-text"
+            className="text-2xl font-bold text-foreground"
           >
             Portfolio
           </motion.div>
