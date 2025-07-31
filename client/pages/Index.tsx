@@ -303,7 +303,7 @@ export default function Index() {
           >
             <Button
               size="lg"
-              className="relative bg-gradient-to-r from-primary via-purple-600 to-pink-600 hover:from-primary/90 hover:via-purple-500 hover:to-pink-500 text-primary-foreground px-8 py-3 text-lg group overflow-hidden shadow-2xl shadow-primary/25"
+              className="relative bg-gradient-to-r from-cyan-500 via-pink-500 to-green-500 hover:from-cyan-400 hover:via-pink-400 hover:to-green-400 text-black px-8 py-3 text-lg group overflow-hidden neon-glow cyberpunk-border"
               onClick={() => scrollToSection(projectsRef)}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -315,7 +315,7 @@ export default function Index() {
             <Button
               size="lg"
               variant="outline"
-              className="px-8 py-3 text-lg group relative overflow-hidden border-2 border-primary/50 hover:border-primary bg-background/80 backdrop-blur-lg hover:bg-primary/10 shadow-xl"
+              className="px-8 py-3 text-lg group relative overflow-hidden cyberpunk-border bg-background/20 backdrop-blur-xl hover:bg-cyan-500/20 neon-glow"
               onClick={() => {
                 const link = document.createElement("a");
                 link.href = "/Sanjeev_Reddy_Resume.pdf";
