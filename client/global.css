@@ -108,8 +108,12 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', system-ui, sans-serif;
-    background: radial-gradient(ellipse at center, hsl(var(--background)) 0%, hsl(220 13% 5%) 100%);
+    font-family: "Inter", system-ui, sans-serif;
+    background: radial-gradient(
+      ellipse at center,
+      hsl(var(--background)) 0%,
+      hsl(220 13% 5%) 100%
+    );
     overflow-x: hidden;
   }
 
@@ -191,7 +195,8 @@
   }
 
   @keyframes floating3d {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0px) rotateX(0deg) rotateY(0deg);
     }
     25% {
@@ -207,17 +212,23 @@
 
   .cyberpunk-border {
     position: relative;
-    background: linear-gradient(45deg, transparent 30%, rgba(0, 255, 255, 0.1) 50%, transparent 70%);
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(0, 255, 255, 0.1) 50%,
+      transparent 70%
+    );
     background-size: 200% 200%;
     animation: cyberpunk-border 3s linear infinite;
   }
 
   .cyberpunk-border::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     padding: 2px;
-    background: linear-gradient(45deg,
+    background: linear-gradient(
+      45deg,
       hsl(var(--neon-cyan)),
       hsl(var(--neon-pink)),
       hsl(var(--neon-green)),
@@ -225,21 +236,35 @@
     );
     background-size: 300% 300%;
     border-radius: inherit;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
     mask-composite: xor;
     animation: cyberpunk-glow 2s linear infinite;
   }
 
   @keyframes cyberpunk-border {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   @keyframes cyberpunk-glow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   .scroll-parallax {
@@ -263,8 +288,12 @@
   }
 
   @keyframes matrix-fall {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(100vh); }
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
   }
 
   .hologram {
@@ -281,7 +310,7 @@
   }
 
   .hologram::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -50%;
     left: -50%;
@@ -297,7 +326,11 @@
   }
 
   @keyframes hologram-scan {
-    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    0% {
+      transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+      transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
   }
 }

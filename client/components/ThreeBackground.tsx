@@ -1,24 +1,25 @@
-import { Canvas, useFrame } from '@react-three/fiber';
-import { useRef, useMemo } from 'react';
-import { Mesh, Points } from 'three';
-import * as THREE from 'three';
+import { Canvas, useFrame } from "@react-three/fiber";
+import { useRef, useMemo } from "react";
+import { Mesh, Points } from "three";
+import * as THREE from "three";
 
 function FloatingCube({ position }: { position: [number, number, number] }) {
   const meshRef = useRef<Mesh>(null);
-  
+
   useFrame((state) => {
     if (meshRef.current) {
       meshRef.current.rotation.x = state.clock.elapsedTime * 0.5;
       meshRef.current.rotation.y = state.clock.elapsedTime * 0.3;
-      meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime + position[0]) * 0.5;
+      meshRef.current.position.y =
+        position[1] + Math.sin(state.clock.elapsedTime + position[0]) * 0.5;
     }
   });
 
   return (
     <mesh ref={meshRef} position={position}>
       <boxGeometry args={[0.5, 0.5, 0.5]} />
-      <meshStandardMaterial 
-        color="#00ffff" 
+      <meshStandardMaterial
+        color="#00ffff"
         emissive="#00ffff"
         emissiveIntensity={0.2}
         transparent
@@ -30,7 +31,7 @@ function FloatingCube({ position }: { position: [number, number, number] }) {
 
 function ParticleField() {
   const pointsRef = useRef<Points>(null);
-  
+
   const particlesPosition = useMemo(() => {
     const positions = new Float32Array(2000 * 3);
     for (let i = 0; i < 2000; i++) {
@@ -71,23 +72,20 @@ function ParticleField() {
 
 function WireframeGrid() {
   const gridRef = useRef<Mesh>(null);
-  
+
   useFrame((state) => {
     if (gridRef.current) {
-      gridRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.2) * 0.1;
-      gridRef.current.rotation.z = Math.cos(state.clock.elapsedTime * 0.1) * 0.05;
+      gridRef.current.rotation.x =
+        Math.sin(state.clock.elapsedTime * 0.2) * 0.1;
+      gridRef.current.rotation.z =
+        Math.cos(state.clock.elapsedTime * 0.1) * 0.05;
     }
   });
 
   return (
     <mesh ref={gridRef} position={[0, -2, -5]}>
       <planeGeometry args={[20, 20, 20, 20]} />
-      <meshBasicMaterial
-        color="#ff00ff"
-        wireframe
-        transparent
-        opacity={0.3}
-      />
+      <meshBasicMaterial color="#ff00ff" wireframe transparent opacity={0.3} />
     </mesh>
   );
 }
@@ -97,15 +95,19 @@ export default function ThreeBackground() {
     <div className="fixed inset-0 -z-10">
       <Canvas
         camera={{ position: [0, 0, 5], fov: 75 }}
-        style={{ background: 'transparent' }}
+        style={{ background: "transparent" }}
       >
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} color="#00ffff" intensity={0.5} />
-        <pointLight position={[-10, -10, -10]} color="#ff00ff" intensity={0.3} />
-        
+        <pointLight
+          position={[-10, -10, -10]}
+          color="#ff00ff"
+          intensity={0.3}
+        />
+
         <ParticleField />
         <WireframeGrid />
-        
+
         <FloatingCube position={[-3, 2, -2]} />
         <FloatingCube position={[3, -1, -3]} />
         <FloatingCube position={[0, 3, -4]} />
